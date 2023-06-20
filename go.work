@@ -1,0 +1,7 @@
+go 1.20
+
+use (
+	../golang-advent-of-code/
+	../golang-advent-of-code/2015
+	../golang-advent-of-code/utils
+)
