@@ -1,24 +1,14 @@
 package main
 
 import (
+	loadData "advent-of-code/utils/loadData"
 	"fmt"
 	"log"
-	"os"
-	"strings"
 )
-
-// error checker
-func check(e error) {
-	if e != nil {
-		log.Panic(e)
-	}
-}
 
 func main() {
 	// load file input
-	file, err := os.ReadFile("./input.txt")
-	check(err)
-	input := strings.Split(string(file), "")
+	input := loadData.LoadData("./input.txt")
 	floor := 0
 
 	for k, char := range input {
