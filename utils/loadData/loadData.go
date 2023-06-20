@@ -1,13 +1,18 @@
 package utils
 
 import (
-	"advent-of-code/utils/check"
+	check "advent-of-code/utils/check"
 	"os"
 	"strings"
 )
 
-func LoadData(path string) []string {
-	file, err := os.ReadFile(path)
-	utils.Check(err)
-	return strings.Split(string(file), "")
+type DataParams struct {
+	Path string
+	Sep  string
+}
+
+func LoadData(params DataParams) []string {
+	file, err := os.ReadFile(params.Path)
+	check.Check(err)
+	return strings.Split(string(file), params.Sep)
 }
